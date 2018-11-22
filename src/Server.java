@@ -83,7 +83,7 @@ class ServerThread extends Thread{
 										System.out.println("Server Recive: "+str+" From Client"+(i+1));
 	                                    System.out.println("Server send: "+token[1]+"|"+token[0]);
 	                                    out_data.get(num).flush();
-	                                    out_data.get(num).writeUTF("#Client_"+token[1]+"|"+token[0]);
+	                                    out_data.get(num).writeUTF("#Create_"+token[1]+"|"+token[0]);
 									}
 								}
 							}
