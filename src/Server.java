@@ -72,19 +72,19 @@ class ServerThread extends Thread{
 				// TODO Auto-generated method stub
 				while (true) {
 					System.out.flush();
-					for (int i = 0; i < in_data.size(); i++) {
+					for (int i = 0; i < (in_data.size()); i++) {
 						try {
 							if(in_data.get(i).available()>0){
 								String str = in_data.get(i).readUTF();
 								String[] token = str.split("_");
 								int num = Integer.parseInt(token[0]);
 								if(!str.equals("")){
-									for (int j = 0; j < out_data.size(); j++) {
+//									for (int j = 0; j < out_data.size(); j++) {
 										System.out.println("Server Recive: "+str+" From Client"+(i+1));
 	                                    System.out.println("Server send: "+token[1]+"|"+token[0]);
 	                                    out_data.get(num).flush();
 	                                    out_data.get(num).writeUTF("#Create_"+token[1]+"|"+token[0]);
-									}
+//									}
 								}
 							}
 							
